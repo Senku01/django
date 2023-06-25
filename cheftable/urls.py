@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from cheftables import views
+from cheftables import views, forms
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home , name= 'home'),
+    path('say_hello/', views.say_hello),
+    path('homepage/',views.homepage),
+    path('display/',views.display_date),
+    path('dishes/<str:dish>', views.menuitems),
+    path('/signup',forms)
+
 ]
